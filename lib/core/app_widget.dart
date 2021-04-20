@@ -1,4 +1,5 @@
 import '../splash/splash_page.dart';
+import '../home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'FlutterDevQuiz',
-      home: SplashPage(),
+      home: HomePage(),
     );
   }
 }
