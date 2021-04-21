@@ -17,7 +17,7 @@ class ScoreCardWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.white,
             border: Border.fromBorderSide(
-              BorderSide(color: AppColors.levelButtonBorderFacil),
+              BorderSide(color: AppColors.border),
             ),
             borderRadius: BorderRadius.circular(15),
           ),
