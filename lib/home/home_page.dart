@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quiz_app/home/widgets/appbar/app_bar_widget.dart';
 import 'package:flutter_quiz_app/home/widgets/level_button/level_button_widget.dart';
+import 'package:flutter_quiz_app/home/widgets/quiz_card/quiz_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -13,28 +14,49 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 24,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            LevelButtonWidget(
-              label: "Fácil",
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 24,
             ),
-            LevelButtonWidget(
-              label: "Médio",
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                LevelButtonWidget(
+                  label: "Fácil",
+                ),
+                LevelButtonWidget(
+                  label: "Médio",
+                ),
+                LevelButtonWidget(
+                  label: "Difícil",
+                ),
+                LevelButtonWidget(
+                  label: "Perito",
+                ),
+              ],
             ),
-            LevelButtonWidget(
-              label: "Difícil",
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: GridView.count(
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                crossAxisCount: 2,
+                children: [
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                  QuizCardWidget(),
+                ],
+              ),
             ),
-            LevelButtonWidget(
-              label: "Perito",
-            ),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }
